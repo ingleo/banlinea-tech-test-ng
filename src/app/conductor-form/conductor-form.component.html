@@ -1,0 +1,47 @@
+<div class="modal-header">
+    <h4 class="modal-title pull-left">{{title}}</h4>
+    <button type="button" class="close pull-right" aria-label="Close" (click)="bsModalRef.hide()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+<div class="modal-body">
+    <div class="container">
+        <form #conductorForm="ngForm">
+            <div class="form-group">
+                <label for="nombres">Nombres</label>
+                <input type="text" class="form-control" id="nombres" required [(ngModel)]="obj.nombres" name="nombres" #nombres="ngModel">
+                <div [hidden]="nombres.valid || nombres.pristine" class="alert alert-danger">
+                    Nombres es requerido
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="apellidos">Apellidos</label>
+                <input type="text" class="form-control" id="apellidos" required [(ngModel)]="obj.apellidos" name="apellidos" #apellidos="ngModel">
+                <div [hidden]="apellidos.valid || apellidos.pristine" class="alert alert-danger">
+                    Apellidos es requerido
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="tipo_documento">Tipo Documento</label>
+                <input type="text" class="form-control" id="tipo_documento" required [(ngModel)]="obj.tipo_documento" name="tipo_documento" #tipodocumento="ngModel">
+                <div [hidden]="tipodocumento.valid || tipodocumento.pristine" class="alert alert-danger">
+                    Tipo documento es requerido
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="numero_documento">Número Documento</label>
+                <input type="text" class="form-control" id="numero_documento" required [(ngModel)]="obj.numero_documento" name="numero_documento" #numerodocumento="ngModel">
+                <div [hidden]="numerodocumento.valid || numerodocumento.pristine" class="alert alert-danger">
+                    Número documento es requerido
+                </div>
+            </div>
+
+            <div class="text-right">
+                <button type="submit" class="btn btn-success" (click)="agregarConductor()">Aceptar</button>
+            </div>
+        </form>
+    </div>
+</div>

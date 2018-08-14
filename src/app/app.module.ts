@@ -11,6 +11,8 @@ import { InicioComponent } from './inicio/inicio.component';
 import { ConductoresComponent } from './conductores/conductores.component';
 import { VehiculosComponent } from './vehiculos/vehiculos.component';
 import { AsignacionesComponent } from './asignaciones/asignaciones.component';
+import { FormsModule } from '@angular/forms';
+import { ConductorFormComponent } from './conductor-form/conductor-form.component';
 
 
 @NgModule({
@@ -20,14 +22,17 @@ import { AsignacionesComponent } from './asignaciones/asignaciones.component';
     InicioComponent,
     ConductoresComponent,
     VehiculosComponent,
-    AsignacionesComponent
+    AsignacionesComponent,
+    ConductorFormComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     ModalModule.forRoot(),
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
+  entryComponents: [ConductorFormComponent],
   providers: [ConductorService],
   bootstrap: [AppComponent]
 })
